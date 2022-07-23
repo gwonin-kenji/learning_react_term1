@@ -1,7 +1,8 @@
 import React from "react";
 
 const ColofulMessage = (props) => {
-  console.log(props);
+  console.log("再レンダリングの確認 ColofulMessageコンポーネント");
+  // console.log(props);
 
   const { color, children } = props;
 
