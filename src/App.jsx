@@ -4,7 +4,7 @@ import ColofulMessage from "./components/ColofulMessage";
 const App = () => {
   console.log("再レンダリングの確認 Appコンポーネント");
   const [num, setNum] = useState(0);
-  const [faseShowFlag, setFaseShowFlag] = useState(true);
+  const [faseShowFlag, setFaseShowFlag] = useState(false);
 
   const onClickCountUp = () => {
     setNum(num + 1);
@@ -13,6 +13,14 @@ const App = () => {
   const onClickSwitchShowFlag = () => {
     setFaseShowFlag(!faseShowFlag);
   };
+
+  if (num > 0) {
+    if (num % 3 === 0) {
+      faseShowFlag || setFaseShowFlag(true);
+    } else {
+      faseShowFlag && setFaseShowFlag(false);
+    }
+  }
 
   return (
     <>
