@@ -1,6 +1,6 @@
 import React from "react";
 
-const ColofulMessage = (props) => {
+export const ColofulMessage = (props) => {
   console.log("再レンダリングの確認 ColofulMessageコンポーネント");
   // console.log(props);
 
@@ -13,5 +13,3 @@ const ColofulMessage = (props) => {
 
   return <p style={contentStyle}>{children}</p>;
 };
-
-export default ColofulMessage;
