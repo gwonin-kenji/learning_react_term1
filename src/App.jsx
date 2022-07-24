@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint  react-hooks/exhaustive-deps: off */
+import React, { useEffect, useState } from "react";
 import ColofulMessage from "./components/ColofulMessage";
 
 const App = () => {
@@ -14,13 +15,16 @@ const App = () => {
     setFaseShowFlag(!faseShowFlag);
   };
 
-  if (num > 0) {
-    if (num % 3 === 0) {
-      faseShowFlag || setFaseShowFlag(true);
-    } else {
-      faseShowFlag && setFaseShowFlag(false);
+  useEffect(() => {
+    console.log("useEffect!!!");
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faseShowFlag || setFaseShowFlag(true);
+      } else {
+        faseShowFlag && setFaseShowFlag(false);
+      }
     }
-  }
+  }, [num]);
 
   return (
     <>
